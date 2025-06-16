@@ -29,7 +29,7 @@ func (m *Mail) CreateMailtoLink(w http.ResponseWriter, r *http.Request) {
 	var subject string
 	var body string
 
-	tmpl := template.Must(template.ParseFiles("C:/development/go_url_shortener_practice/templates/mailto.html"))
+	tmpl := template.Must(template.ParseFiles("C:/development/go_mailto_link_generator/templates/mailto.html"))
 	fmt.Println("getting the mailto for the home page...")
 
 	fmt.Println("creating short url...")
@@ -76,6 +76,7 @@ func (m *Mail) GetMailtoLink(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Println(mailToLink)
 	http.Redirect(w, r, mailToLink, 302)
 	//should the backend redirect or should the front end do the redirect?
 	utils.RespondWithJSON(w, code, mailToLink)

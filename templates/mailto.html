@@ -1,5 +1,5 @@
 {{if .Generated}}
-    <h1>Your mailTo URL is <a target="_blank" href="http://localhost:3000/url/{{.MailToURL}}">HERE</a></h1>
+    <h1>Your mailTo URL is <a target="_blank" href="http://localhost:3000/mailto/{{.MailToURL}}">HERE</a></h1>
 {{else if .Error}}
     <h1>Error generating shortened URL: {{.Error}}</h1>
 {{else}}
