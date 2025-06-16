@@ -1,0 +1,16 @@
+{{if .Generated}}
+    <h1>Your mailTo URL is <a target="_blank" href="http://localhost:3000/url/{{.MailToURL}}">HERE</a></h1>
+{{else if .Error}}
+    <h1>Error generating shortened URL: {{.Error}}</h1>
+{{else}}
+    <h1>MailTo Generator</h1>
+    <form method="POST">
+        <label>To:</label><br/>
+        <input type="text" name="to"><br />
+        <label>Subject:</label><br/>
+        <input type="text" name="subject"><br />
+        <label>Body:</label><br/>
+        <input type="textarea" name="body"><br />
+        <input type="submit">
+    </form>
+{{end}}
